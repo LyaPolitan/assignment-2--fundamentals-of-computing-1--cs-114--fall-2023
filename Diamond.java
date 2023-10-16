@@ -23,20 +23,26 @@ public class Diamond {
 
             // Print stars
             for (int j = 0; j <= stars; j++) {
-                if (stars%2 ==0){
                 System.out.print("* ");
-                }
             }
 
             // Move to the next line
-            if (stars%2==0){
             System.out.println();
-            }
+
 
             //update spaces and stars for the next row
             if(i <= number / 2){
                 spaces--;
-                stars+=1;
+                if (stars==1){
+                  spaces--;
+                  stars+=1;
+                }else{
+                  spaces--;
+                  stars+=2;
+                }
+            }
+            if(i == number+1){
+              stars=1;
             }
         }
       }else{
